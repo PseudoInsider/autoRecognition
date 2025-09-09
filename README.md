@@ -1,2 +1,0 @@
-# autoRecognition
-autorecognition of evidentials
