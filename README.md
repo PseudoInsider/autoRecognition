@@ -14,7 +14,7 @@ Features
 	Fast Deployment with Streamlit
 	Deploy locally or on the cloud within minutes.
 	
-	🛠Research-Oriented Workflow
+	Research-Oriented Workflow
 	Provides a reproducible framework for the quantitative study of evidentiality in news and academic discourse.
 
 Installation
@@ -92,4 +92,4 @@ License
 	This project is licensed under the MIT License.
  	If you use this app or the underlying methods in your research, please cite our work:
   		Huan, C., & Wang, L. (forthcoming). The application of language model fine-tuning techniques to local grammar: Automated recognition of evidentials. Foreign Languages and their Teaching. 
-		Huan, C., & Wang, L., 2025. Discourse Communication Effectiveness Evaluation System for Information Source. Github. Available at https://github.com/PseudoInsider/autoRecognition.git
+		Huan, C., & Wang, L., 2025. Discourse Communication Effectiveness Evaluation System for Information Source. [2025SR1448391]. National Copyright Administration of the People's Republic of China. Available at https://github.com/PseudoInsider/autoRecognition.git
