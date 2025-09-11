@@ -1,4 +1,4 @@
-Auto-recognition of Evidentials [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://<your-custom-subdomain>.streamlit.app)
+Auto-recognition of Evidentials [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://autorecognition-sdcmrsmudbn8g2xxg266mr.streamlit.app/)
 
 
 	A simple and interactive web app built with Streamlit, designed to demonstrate how evidentials can be explored through local grammar analysis and fine-tuned language models.
