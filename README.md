@@ -90,6 +90,6 @@ Contributing
 License
 
 	This project is licensed under the MIT License.
- 	If you use this app or the underlying methods in your research, please cite our paper 
-  Huan, C., & Wang, L. (forthcoming). The application of language model fine-tuning techniques to local grammar: Automated recognition of evidentials. Foreign Languages and their Teaching. 
-  Huan, C., & Wang, L., 2025. Discourse Communication Effectiveness Evaluation System for Information Source. Github. Available at https://github.com/PseudoInsider/autoRecognition.git
+ 	If you use this app or the underlying methods in your research, please cite our work:
+  		Huan, C., & Wang, L. (forthcoming). The application of language model fine-tuning techniques to local grammar: Automated recognition of evidentials. Foreign Languages and their Teaching. 
+		Huan, C., & Wang, L., 2025. Discourse Communication Effectiveness Evaluation System for Information Source. Github. Available at https://github.com/PseudoInsider/autoRecognition.git
