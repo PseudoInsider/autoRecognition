@@ -1,10 +1,11 @@
+import os
+import re
 import torch
+import requests
 import pandas as pd
-from transformers import RobertaTokenizerFast
 from tqdm import tqdm
 import torch.nn as nn
-from transformers import RobertaModel
-import re
+from transformers import RobertaModel, RobertaTokenizerFast
 
 
 class RoBERTaTokenClassifier(nn.Module):
@@ -26,12 +27,31 @@ class RoBERTaTokenClassifier(nn.Module):
 
 
 class IOTagger:
-    def __init__(self, model_path, num_labels=6, tokenizer_name="roberta-large"):
+    def __init__(self, model_path="V1-model.bin", num_labels=6,
+                 tokenizer_name="roberta-large", model_url=None):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        # -------- 下载 GitHub Release 模型 --------
+        if not os.path.exists(model_path) and model_url:
+            print(f"Downloading model from {model_url} ...")
+            r = requests.get(model_url, stream=True)
+            total_length = int(r.headers.get('content-length', 0))
+            with open(model_path, "wb") as f:
+                for chunk in tqdm(r.iter_content(chunk_size=8192),
+                                  total=total_length // 8192,
+                                  unit='KB'):
+                    if chunk:
+                        f.write(chunk)
+            print("✅ Model downloaded successfully!")
+
+        # -------- 初始化模型并加载权重 --------
         self.model = RoBERTaTokenClassifier(num_labels=num_labels).to(self.device)
         self.model.load_state_dict(torch.load(model_path, map_location=self.device))
         self.model.eval()
+
+        # -------- 初始化分词器 --------
         self.tokenizer = RobertaTokenizerFast.from_pretrained(tokenizer_name)
+
         self.label_to_id = {
             "O": 0, "I-source": 1, "I-residue": 2,
             "I-cue": 3, "I-content": 4, "I-hinge": 5
@@ -42,8 +62,8 @@ class IOTagger:
             "I-residue": "residue", "I-content": "content", "O": "O"
         }
 
+
     def process_token_results(self, token_results):
-        """Process token-level predictions into tagged sentences and categorized text."""
         words = [token['word'] for token in token_results if token['word'].strip()]
         pred_labels = [token['pred_label'] for token in token_results if token['word'].strip()]
 
@@ -51,7 +71,7 @@ class IOTagger:
         processed_words = [word for word in words if word not in special_tokens]
         filtered_labels = [label for word, label in zip(words, pred_labels) if word not in special_tokens]
 
-        # Reconstruct clean sentence
+        # Reconstruct sentence
         clean_sentence_parts = []
         i = 0
         while i < len(processed_words):
@@ -65,10 +85,8 @@ class IOTagger:
             i += 1
         clean_sentence = "".join(clean_sentence_parts)
 
-        # Map IO labels to categories
         categories = [self.label_mapping.get(label, "O") for label in filtered_labels]
 
-        # Build tagged sentence
         tagged_sentence_parts = []
         current_label = None
         for word, category in zip(processed_words, categories):
@@ -111,7 +129,6 @@ class IOTagger:
         return row
 
     def extract_labeled_text(self, tagged_sentence, tag):
-        """Extract content marked by a specific tag and join disjoint parts with '///'."""
         matches = re.findall(fr"<{tag}>(.*?)(?=(</{tag}>|$))", tagged_sentence)
         return "///".join(match[0].strip() for match in matches) if matches else "N/A"
 
@@ -126,7 +143,6 @@ class IOTagger:
             context = str(row.get("Context", ""))
             reporting_sentence = str(row.get("ReportingSentence", ""))
 
-            # Tokenization with truncation to avoid >512 errors
             inputs = self.tokenizer(
                 reporting_sentence,
                 truncation=True,
@@ -139,14 +155,12 @@ class IOTagger:
                 probabilities = torch.nn.functional.softmax(logits, dim=-1)[0].cpu().numpy()
                 predictions = logits.argmax(dim=-1)[0].cpu().numpy()
 
-            # Get offsets (also truncated to 512)
-            inputs_with_offsets = self.tokenizer(
+            offsets = self.tokenizer(
                 reporting_sentence,
                 return_offsets_mapping=True,
                 truncation=True,
                 max_length=512
-            )
-            offsets = inputs_with_offsets["offset_mapping"]
+            )["offset_mapping"]
 
             token_results = []
             for idx in range(len(predictions)):
@@ -185,9 +199,15 @@ class IOTagger:
 
 
 if __name__ == "__main__":
-    tagger = IOTagger(model_path='V1-model.bin')
+    GITHUB_MODEL_URL = "https://github.com/PseudoInsider/autoRecognition/releases/download/v1.0/V1-model.bin"
+
+    tagger = IOTagger(
+        model_path='V1-model.bin',
+        model_url=GITHUB_MODEL_URL
+    )
+
     results = tagger.predict_dataset(
-        input_csv='cc_input_2025.csv',
+        input_csv='input.csv',
         output_csv='predicted_result.csv'
     )
     print("Prediction completed.")

@@ -126,7 +126,6 @@ def app():
     if 'predicted_data' not in st.session_state:
         st.session_state.predicted_data = None
     apply_custom_styles()
-    VoiceDecoder = get_image_base64("VoiceDecoder.png")
 
 
     st.markdown(
@@ -249,8 +248,21 @@ def app():
                     unsafe_allow_html=True
                 )
 
-        # Hidden model configuration
-        model_path = "V1-model.bin"
+        # Hidden model configuration - 自动下载模型
+        import requests
+
+        MODEL_URL = "https://github.com/PseudoInsider/autoRecognition/releases/download/v1.0/V1-model.bin"
+        MODEL_PATH = "V1-model.bin"
+
+        # 如果本地没有模型，就从 GitHub Release 下载
+        if not os.path.exists(MODEL_PATH):
+            with st.spinner("正在从 GitHub Release 下载模型，请稍候..."):
+                response = requests.get(MODEL_URL, stream=True)
+                response.raise_for_status()   # ✅ 新增，确保下载失败时抛错
+            with open(MODEL_PATH, "wb") as f:
+                shutil.copyfileobj(response.raw, f)
+            del response
+            st.success("模型下载完成！")
 
         # Centered analysis button with processing logic
         col1, col2, col3 = st.columns([1, 2, 1])
@@ -260,8 +272,8 @@ def app():
                          help="点击开始分析文本的话语功能"):
 
                 # Model validation
-                if not os.path.exists(model_path):
-                    st.error(f"❌ 模型文件未找到: {model_path}")
+                if not os.path.exists(MODEL_PATH):
+                    st.error(f"❌ 模型文件未找到: {MODEL_PATH}")
                     st.stop()
 
                 # Create temporary workspace
@@ -277,7 +289,7 @@ def app():
 
                 try:
                     # Initialize analyzer
-                    tagger = IOTagger(model_path=model_path)
+                    tagger = IOTagger(model_path=MODEL_PATH)
 
                     # Simulation of analysis process
                     for percent in range(100):
@@ -433,4 +445,3 @@ def app():
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
-
