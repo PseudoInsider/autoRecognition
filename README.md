@@ -68,6 +68,7 @@ Running the App
 	├── requirements.txt    # Dependencies
 	├── other               # Related attachments
 	└── README.md           # Documentation
+	└── Test_data           # Sample data used for test
 ---
 
 ## Research Background
@@ -96,3 +97,14 @@ If you use this app or the underlying methods in your research, please cite our 
 
 - Huan, C., & Wang, L. (Accepted). The application of language model fine-tuning techniques to local grammar: Automated recognition of evidentials. *Foreign Languages and their Teaching*. 
 - Huan, C., & Wang, L., 2025. Discourse Communication Effectiveness Evaluation System for Information Source. [2025SR1448391]. National Copyright Administration of the People's Republic of China. Available at https://github.com/PseudoInsider/autoRecognition.git
+
+## Disclaimer
+
+This application is provided as is without any guarantees or warranty.
+Use it at your own risk. The authors and contributors are not responsible for:
+
+- Any damages, losses, or issues arising from the use of this app
+- The accuracy, completeness, or reliability of data and outputs
+- Misuse of the app for unintended or unlawful purposes
+
+If any test data, examples, or other content in this project impinge on your rights, please contact us, and we will promptly remove or replace the material.

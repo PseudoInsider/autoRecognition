@@ -1,0 +1,33 @@
+Hello and welcome to another year of The Crunch!
+There have been a bunch of excellent visuals published while we've been off. In this week's newsletter we have charts on overused Pin codes, an accounting of the destruction in Gaza, a cozy game exploring cozy games, and a lunar new year explainer.
+But first ... how the Los Angeles fires erupted
+There are many aspects of the Los Angeles fires to unpack - more of that below. From afar, mediated through social and broadcast media, one of the hardest things to grasp was how quickly the blazes grew. Our colleagues at the Guardian in the US put together a visual explainer.
+It includes this animated map using Nasa hotspot data that Nick put together (click through for the animated version):
+Spotlight on the LA wildfires                                                               The New York Times explored how more Americans than ever are living in areas prone to wildfires                                                                  The New York Times on the 24 hours when LA went up in flames                                                                  Bloomberg had a global look  at how fire seasons are overlapping around the world, making it even harder to fight fires                                                                 The Economist on which parts of the world are becoming more prone to wildfire                                                            Four charts from the fortnight
+***
+1. My square is bigger than yours
+We've used this newsletter to champion  more simple and straightforward visualisations. Sometimes - maybe most times? - a well-done bar or line chart is a far more powerful way to tell a story than something with a bunch of distracting bells and whistles.
+With that in mind, take a look at Nathan Yau's beautifully simple interactive on FlowingData  visualising how many Americans have similar education, income, working hours and commutes.
+The Guardian Australia data team completed a similar project last year  using Australian census and survey data, so that Aussies could see where they stand in terms of income and wealth.
+***
+2. Stop using dates for your Pin code
+The ABC's Julian Fell and Teresa Tan have a great interactive exploring Pin codes.  We have previously featured  some other great data-vis on Pins in the newsletter.
+Using 29 million actual Pins, Fell and Tan explored some of the patterns and predictable behaviours we tend to follow.
+I hadn't ever considered what a confined space dates and years have. It's very likely anyone reading this was born in a year that starts with 19 or 20 - leaving only a couple of numbers to guess. Let's all take this as a wake-up call. It's never too late to change your Pin to something more secure.
+***
+3. A visual guide to the destruction of Gaza
+There have been more than 46,000 deaths and 110,000 wounded in the Israeli attacks on Gaza, according to official counts. These numbers are often repeated, but this visualisation of the destruction  by our UK colleagues hits on other dimensions.
+Data visualisations can make scale, repetition and cumulation real in ways that words often fail to. This is devastating.
+CNN also published a similar visual guide to destruction in Gaza  that is worth checking out.
+While we're in this region, we'll take this opportunity to highlight our colleague Mona Chalabi's piece about the number of journalists that were killed last year.  More than a hundred journalists and media workers around the world were killed in 2024, and more than half of those were in Palestine.
+***
+4. Getting cozy with cozy games
+The gaming industry is under-covered by the media for its size - larger than the film and music industries combined. Perhaps one reason I (Josh) had never heard of cozy games before. They are games designed to help you unwind - more about building community, and "more constructive than destructive".
+While there's no data-vis in this story by Reuters, it's an absolutely lovely interactive exploration of cozy games.
+Off the Charts
+This week saw in the lunar new year, and to mark the occasion, the South China Morning Post created this beautifully illustrated explainer  of the Year of the Snake. The best graphics were a bit too large to screenshot so we really recommend clicking through.
+Sign up
+Enjoying The Crunch? If you like what you see and think you might know someone else who would enjoy it, please forward this email or send them a link to the sign up page.
+Contact us
+If you have a chart tip  or  technical issue  viewing this newsletter, please reply to this email.
+If you are a Guardian supporter and need assistance with regards to contributions and/or digital subscriptions, please email customer.help@guardian.co.uk
