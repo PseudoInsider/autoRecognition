@@ -1,4 +1,4 @@
-
+gitgit
 # *Discourse Communication Effectiveness Evaluation System for Information Source*
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://autorecognition.streamlit.app/)
@@ -107,4 +107,4 @@ Use it at your own risk. The authors and contributors are not responsible for:
 - The accuracy, completeness, or reliability of data and outputs
 - Misuse of the app for unintended or unlawful purposes
 
-If any test data, examples, or other content in this project impinge on your rights, please contact us, and we will promptly remove or replace the material.
+If any test data, examples, or other content in this project impinge on your rights, please contact us, and we will promptly remove or replace the material.s
