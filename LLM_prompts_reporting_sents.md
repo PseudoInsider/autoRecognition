@@ -22,8 +22,9 @@
 ### 示例 1
 **原文**: “Eli said he was confident his close relationship with his mother would survive their political differences.  
 **标注后**:  
+
 <source>Eli</source> <cue>said</cue> <content>he was confident his close relationship with his mother would survive their political differences</content>.
-… （其余示例省略）
+
 ## 提示
 - 仔细分析句子结构，确保每个术语的应用准确。
 - 保持标注结果简洁明了，避免冗余信息。
