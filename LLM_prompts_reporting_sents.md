@@ -20,9 +20,46 @@
 6. 转述句中不存在同一内容具有多个类型标签的情况。
 ## 示例
 ### 示例 1
-**原文**: “Eli said he was confident his close relationship with his mother would survive their political differences.”
+**原文**: "Eli said he was confident his close relationship with his mother would survive their political differences."  
 **标注后**:  
 `<source>Eli</source> <cue>said</cue> <content>he was confident his close relationship with his mother would survive their political differences</content>`
+### 示例 2
+**原文**: "Federal regulators accused Capital One of cheating customers out of $2 billion by deliberately underpaying savings account interest."  
+**标注后**:  
+`<source>Federal regulators</source> <cue>accused</cue> <content>Capital One of cheating customers out of $2 billion by deliberately underpaying savings account interest</content>.`
+### 示例 3
+**原文**: "Deloitte highlighted several bright spots suggesting that India should adapt to the evolving global landscape."  
+**标注后**:  
+`<source>Deloitte</source> <cue>highlighted</cue> <content>several bright spots</content> <cue>suggesting</cue> <hinge>that</hinge> <content>India should adapt to the evolving global landscape</content>.`
+### 示例 4
+**原文**: "Cost efficiency: DeepSeek - R1 is reported to be 20 to 50 times cheaper to use than OpenAI's models, depending on the task."  
+**标注后**:  
+`<residue>Cost efficiency </residue>:<content>DeepSeek - R1</content> <cue>is reported</cue> <content>to be 20 to 50 times cheaper to use than OpenAI's models, depending on the task</content>.`
+### 示例 5
+**原文**: "A spokesperson for the interior ministry of Germany stated that the government is monitoring AI apps for potential interference."  
+**标注后**:  
+`<source>A spokesperson for the interior ministry of Germany</source> <cue>stated</cue> <hinge>that</hinge> <content>the government is monitoring AI apps for potential interference</content>.`
+### 示例 6
+**原文**: "The Labour MP Tonia Antoniazzi asked the prime minister in the Commons this week: 'Will he please agree to meet his counterparts in South Africa and Australia?'"  
+**标注后**:  
+`<source>The Labour MP Tonia Antoniazzi</source> <cue>asked</cue> <content>the prime minister</content> <residue>in the Commons this week:</residue> <content>'Will he please agree to meet his counterparts in South Africa and Australia?'</content>.`
+### 示例 7
+**原文**: "She announced at the conference that the new policy would take effect next month."  
+**标注后**:  
+`<source>She</source> <cue>announced</cue> <residue>at the conference</residue> <hinge>that</hinge> <content>the new policy would take effect next month</content>.`
+### 示例 8
+**原文**: "Lynas said it expected building non-China supply chains to remain a top priority for the US and other governments."  
+**标注后**:  
+`<source>Lynas</source> <cue>said</cue> <source>it</source> <cue>expected</cue> <content>building non-China supply chains to remain a top priority for the US and other governments</content>.`
+### 示例 9
+**原文**: "According to the report, the project will be delayed."  
+**标注后**:  
+`<cue>According to</cue> <source>the report</source>, <content>the project will be delayed</content>.`
+### 示例 10
+**原文**: "The US Department of Defence is backing both Lynas and MP Materials to build processing plants in Texas."  
+**标注后**:  
+`<source>The US Department of Defence</source> <cue>is backing</cue> <content>both Lynas and MP Materials to build processing plants in Texas</content>.`
+
 ## 提示
 - 仔细分析句子结构，确保每个术语的应用准确。
 - 保持标注结果简洁明了，避免冗余信息。
